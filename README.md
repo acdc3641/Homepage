@@ -1,3 +1,3 @@
 # 아천동교회 홈페이지 제작
 
-HTML, CSS, JS 재밌다
+HTML, CSS, JS 재밌다...
