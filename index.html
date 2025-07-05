@@ -1,60 +1,633 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html class="no-js" lang="ko">
   <head>
-    <meta charset="UTF-8" />
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
     <title>아천동교회</title>
-    <meta
-      name="description"
-      content="아천동교회 공식 홈페이지입니다. 예배 안내, 행사 일정, 오시는 길 등 다양한 정보를 확인하세요!"
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- link
+    ================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <meta property="og:title" content="아천동교회" />
-    <meta
-      property="og:description"
-      content="새가족과 방문자를 위한 아천동교회 소개 페이지입니다"
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
     />
-    <meta property="og:url" content="https://acdc3641.github.io/Homepage/" />
-    <meta property="og:type" content="website" />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Noto Sans KR", sans-serif;
-        background-color: #f9fafb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        padding: 20px;
-      }
-      .container {
-        max-width: 800px;
-      }
-      h1 {
-        font-size: 2.5rem;
-        color: #fc8d32;
-      }
-      p {
-        color: #374151;
-        font-size: 1.25rem;
-      }
-      @media (min-width: 768px) {
-        body {
-          align-items: flex-start;
-          padding-top: 120px;
-        }
-        h1 {
-          font-size: 3rem;
-        }
-        p {
-          font-size: 1.5rem;
-        }
-      }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <!-- font
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Noto+Serif+KR:wght@200..900&family=Orbit&family=Song+Myung&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Hahmlet:wght@100..900&family=Orbit&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png" />
+    <link rel="manifest" href="site.webmanifest" />
   </head>
-  <body>
-    <div class="container">
-      <h1>⛪ 홈페이지는 현재 공사 중입니다!</h1>
-      <p>2025년 7월 초 정식 오픈 예정입니다. 기대해주세요!</p>
+
+  <body id="top">
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+      <div id="loader" class="dots-jump">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+      <div class="header-logo">
+        <a class="site-logo" href="index.html">
+          <img src="images/logo1.png" alt="Homepage" />
+        </a>
+      </div>
+
+      <nav class="header-nav-wrap">
+        <ul class="header-nav">
+          <li class="current"><a href="index.html" title="home">홈</a></li>
+          <li><a href="greeting.html" title="About">교회소개</a></li>
+          <li><a href="departments.html" title="Contact us">부서소개</a></li>
+          <li><a href="worship.html" title="Contact us">예배안내</a></li>
+          <li><a href="events.html" title="Services">교회일정</a></li>
+        </ul>
+      </nav>
+
+      <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+    </header>
+    <!-- end s-header -->
+
+    <!-- hero
+    ================================================== -->
+    <section
+      class="s-hero"
+      data-parallax="scroll"
+      data-image-src="images/hero-bg-43.jpg"
+      data-natural-width="3000"
+      data-natural-height="2000"
+      data-position-y="center"
+    >
+      <div class="row hero-content">
+        <div class="column large-full hero-content__text">
+          <h1>
+            성령의 능력을 <br />
+            의지하라!
+          </h1>
+
+          <div class="hero-content__buttons">
+            <a href="greeting.html" class="btn btn--stroke">교회 소개</a>
+            <a href="events.html" class="btn btn--stroke">행사 및 일정</a>
+          </div>
+        </div>
+        <!-- end hero-content__text -->
+      </div>
+      <!-- end hero-content -->
+
+      <ul class="hero-social">
+        <li class="hero-social__title">Follow Us</li>
+        <li>
+          <a
+            href="https://youtube.com/channel/UCDaouPzxLvwSefpO3Cc82Og?si=fhFweT9WktZ_SAXV"
+            target="_blank"
+            title=""
+            >YouTube</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/acheon_dong_church?igsh=MTI3YzFyMGkzZnVlYg%3D%3D&utm_source=qr"
+            target="_blank"
+            title=""
+            >Instagram</a
+          >
+        </li>
+      </ul>
+      <!-- end hero-social -->
+
+      <div class="hero-scroll">
+        <a href="#about" class="scroll-link smoothscroll"> Scroll For More </a>
+      </div>
+      <!-- end hero-scroll -->
+    </section>
+    <!-- end s-hero -->
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about">
+      <div class="row row-y-center about-content">
+        <div class="column large-half medium-full">
+          <h3 class="subhead">아천동 교회로 환영합니다</h3>
+          <p class="lead">
+            우리 주 예수 그리스도의 몸된 교회로서, 모든 세대가 복음 안에서 하나
+            되고, 하나님의 영광을 위해 함께 살아보시려는 모든 분을 환영합니다.
+            <br /><br />
+            이곳을 찾으신 여러분 한 분 한 분이 하나님의 사랑과 은혜 안에서
+            회복과 위로, 믿음의 도전을 경험하시기를 소망합니다.
+          </p>
+          <a href="greeting.html" class="btn btn--primary btn--about"
+            >자세한 교회 안내</a
+          >
+        </div>
+
+        <div class="column large-half medium-full">
+          <ul class="about-sched">
+            <li>
+              <h4>주일 본예배</h4>
+              <p>
+                주일 - 10:00 AM | 11:30 PM <br />
+                아천동 교회 3층 본당
+              </p>
+            </li>
+            <li>
+              <h4>수요 기도회</h4>
+              <p>
+                수요일 - 18:50 PM <br />
+                아천동 교회 3층 본당
+              </p>
+            </li>
+            <li>
+              <h4>새벽 기도회</h4>
+              <p>
+                화, 수, 목, 금요일 - 05:30 AM <br />
+                아천동 교회 3층 본당
+              </p>
+            </li>
+          </ul>
+          <!-- end about-sched-->
+        </div>
+      </div>
+      <!-- end about-content -->
+    </section>
+    <!-- end s-about -->
+
+    <!-- connect
+    ================================================== -->
+    <section class="s-connect">
+      <div class="row connect-content">
+        <div class="column column-left">
+          <a
+            href="https://youtube.com/channel/UCDaouPzxLvwSefpO3Cc82Og?si=rFK1JFqHyx3qSlUB"
+            target="_blank"
+          >
+            <img
+              src="images/youtube-1.png"
+              alt="유튜브 링크 이미지"
+              style="width: 100%; height: auto"
+            />
+          </a>
+        </div>
+        <div class="column column-right">
+          <h3 class="display-1">부서 소개</h3>
+          <p>
+            다양한 사역 팀과 교회 학교 부서가 있으며<br />
+            모든 세대가 함께 신앙의 공동체를 이루고 있습니다. <br />
+            교회 사역 팀은 찬양, 예배, 봉사, 친교 등 <br />
+            다양한 분야에서 섬김과 나눔을 실천하며, <br />
+            교회 학교는 영유아부터 청소년, 청년에 이르기까지 <br />
+            다음 세대가 믿음 안에서 성장하도록 돕고 있습니다. <br />
+            모든 부서는 하나님께서 주신 사명을 따라 <br />
+            한 마음으로 예배하며, 사랑으로 함께 걸어갑니다.
+          </p>
+          <a href="departments.html" class="btn btn--primary h-full-width"
+            >부서 소개 바로가기
+          </a>
+        </div>
+      </div>
+      <!-- end connect-content  -->
+    </section>
+    <!-- end s-connect -->
+
+    <!-- events
+    ================================================== -->
+    <section class="s-events">
+      <div class="row events-header">
+        <div class="column">
+          <h3 class="subhead">다가오는 일정</h>
+        </div>
+      </div>
+      <!-- end event-header -->
+
+      <div class="row block-large-1-2 block-900-full events-list">
+        <div class="column events-list__item">
+          <h3 class="display-1 events-list__item-title">
+            2025 예사공 여름 수련회
+          </h3>
+          <img src="images/event/event1.png" alt="Kids Church Camp 이미지" />
+          <ul class="events-list__meta">
+            <li class="events-list__meta-quote">
+              성경-성경을 읽는 안경 (벧전 3:15~16)
+            </li>
+            <li class="events-list__meta-date">2025.06.20 ~ 2025.06.22</li>
+            <li class="events-list__meta-location">아천동 교회</li>
+          </ul>
+        </div>
+        <div class="column events-list__item">
+          <h3 class="display-1 events-list__item-title">
+            인도네시아 선교지 탐방
+          </h3>
+          <img src="images/event/event2.jpg" alt="Kids Church Camp 이미지" />
+          <ul class="events-list__meta">
+            <li class="events-list__meta-quote">
+              서울동북노회 세계선교부 주관
+            </li>
+            <li class="events-list__meta-date">2025.07.07 ~ 2025.07.12</li>
+            <li class="events-list__meta-location">
+              인도네시아, 자카르타 일대
+            </li>
+          </ul>
+        </div>
+        <div class="column events-list__item">
+          <h3 class="display-1 events-list__item-title">
+            2025 솔로몬 스쿨 여름 수련회
+          </h3>
+          <img src="images/event/event3.png" alt="Kids Church Camp 이미지" />
+          <ul class="events-list__meta">
+            <li class="events-list__meta-quote">
+              다시 한번 기회를! (왕상 11:9)
+            </li>
+            <li class="events-list__meta-date">2025.07.18 ~ 2025.07.20</li>
+            <li class="events-list__meta-location">아천동 교회</li>
+          </ul>
+        </div>
+        <div class="column events-list__item">
+          <h3 class="display-1 events-list__item-title">
+            사무엘 다니엘스쿨 여름 수련회
+          </h3>
+          <img src="images/event/event4.png" alt="Kids Church Camp 이미지" />
+          <ul class="events-list__meta">
+            <li class="events-list__meta-quote">
+              사랑하기 프로젝트 (요일 4:11)
+            </li>
+            <li class="events-list__meta-date">2025.07.26 ~ 2025.07.27</li>
+            <li class="events-list__meta-location">아천동 교회</li>
+          </ul>
+        </div>
+        <!-- end events-list__item -->
+      </div>
+      <!-- end events-list -->
+    </section>
+    <!-- end s-events -->
+
+    <!-- series
+    ================================================== -->
+    <section class="s-series">
+      <div class="series-grid">
+        <div class="series-item">
+          <a
+            href="images/series/1.jpg"
+            data-lightbox="gallery"
+            data-title="위임예식"
+            class="gallery-item"
+          >
+            <img src="images/series/1.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">김상호목사 위임예식</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/2.jpg"
+            data-lightbox="gallery"
+            data-title="교육부 봄소풍"
+            class="gallery-item"
+          >
+            <img src="images/series/2.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">교육부 봄소풍</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/3.jpg"
+            data-lightbox="gallery"
+            data-title="신년새벽기도회"
+            class="gallery-item"
+          >
+            <img src="images/series/3.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">신년새벽기도회</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/4.jpeg"
+            data-lightbox="gallery"
+            data-title="장로 임직예식"
+            class="gallery-item"
+          >
+            <img src="images/series/4.jpeg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">장로 임직예식</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/5.JPG"
+            data-lightbox="gallery"
+            data-title="권사, 안수집사 임직예식"
+            class="gallery-item"
+          >
+            <img src="images/series/5.JPG" alt="썸네일 이미지1" />
+            <div class="gallery-caption">권사, 안수집사 임직예식</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/6.jpeg"
+            data-lightbox="gallery"
+            data-title="교회 대청소"
+            class="gallery-item"
+          >
+            <img src="images/series/6.jpeg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">교회 대청소</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/7.jpg"
+            data-lightbox="gallery"
+            data-title="성탄절"
+            class="gallery-item"
+          >
+            <img src="images/series/7.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">성탄절</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/8.jpg"
+            data-lightbox="gallery"
+            data-title="설맞이 윷놀이"
+            class="gallery-item"
+          >
+            <img src="images/series/8.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">설맞이 윷놀이</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/9.jpg"
+            data-lightbox="gallery"
+            data-title="성경퀴즈대회"
+            class="gallery-item"
+          >
+            <img src="images/series/9.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">성경퀴즈대회</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/10.jpg"
+            data-lightbox="gallery"
+            data-title="성막체험"
+            class="gallery-item"
+          >
+            <img src="images/series/10.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">성막체험</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/11.jpg"
+            data-lightbox="gallery"
+            data-title="픽쳐데이 듈로스 엄빠"
+            class="gallery-item"
+          >
+            <img src="images/series/11.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">픽쳐데이 듈로스 엄빠</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/12.jpg"
+            data-lightbox="gallery"
+            data-title="픽쳐데이 주방봉사단"
+            class="gallery-item"
+          >
+            <img src="images/series/12.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">픽쳐데이 주방봉사단</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/13.jpg"
+            data-lightbox="gallery"
+            data-title="추석맞이 경로당 방문"
+            class="gallery-item"
+          >
+            <img src="images/series/13.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">추석맞이 경로당 방문</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/14.jpeg"
+            data-lightbox="gallery"
+            data-title="부활란 전도"
+            class="gallery-item"
+          >
+            <img src="images/series/14.jpeg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">부활란 전도</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/15.jpg"
+            data-lightbox="gallery"
+            data-title="청x청 여름수련회"
+            class="gallery-item"
+          >
+            <img src="images/series/15.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">청x청 여름수련회</div>
+          </a>
+        </div>
+        <div class="series-item">
+          <a
+            href="images/series/16.jpg"
+            data-lightbox="gallery"
+            data-title="교회 김장"
+            class="gallery-item"
+          >
+            <img src="images/series/16.jpg" alt="썸네일 이미지1" />
+            <div class="gallery-caption">교회 김장</div>
+          </a>
+        </div>
+      </div>
+      <!-- series-content -->
+    </section>
+    <!-- end s-series -->
+
+    <!-- Social
+    ================================================== -->
+    <section class="s-social">
+      <div class="row social-content">
+        <div class="column">
+          <ul class="social-list">
+            <li class="social-list__item">
+              <a
+                href="https://youtube.com/channel/UCDaouPzxLvwSefpO3Cc82Og?si=CCJbCwV-l4S1bJ1q"
+                target="_blank"
+                title=""
+              >
+                <span
+                  class="social-list__icon social-list__icon--youtube"
+                ></span>
+                <span class="social-list__text">Youtube</span>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a
+                href="https://www.instagram.com/acheon_dong_church?igsh=MTI3YzFyMGkzZnVlYg%3D%3D&utm_source=qr"
+                target="_blank"
+                title=""
+              >
+                <span
+                  class="social-list__icon social-list__icon--instagram"
+                ></span>
+                <span class="social-list__text">Instagram</span>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a
+                href="https://cafe.naver.com/acheondongchurch"
+                target="_blank"
+                title=""
+              >
+                <span class="social-list__icon social-list__icon--naver"></span>
+                <span class="social-list__text">Naver Cafe</span>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a
+                href="mailto:acheondong3641@gmail.com"
+                target="_blank"
+                title=""
+              >
+                <span class="social-list__icon social-list__icon--email"></span>
+                <span class="social-list__text">Email</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- end social-content -->
+    </section>
+    <!-- end s-social -->
+
+    <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+      <div class="row footer-top">
+        <div class="column large-4 medium-5 tab-full">
+          <div class="footer-logo">
+            <a class="site-footer-logo" href="index.html">
+              <img src="images/logo.png" alt="Homepage" />
+            </a>
+          </div>
+          <!-- footer-logo -->
+          <p>이곳까지 함께해주셔서 감사합니다.<br />
+            아천동교회는 언제나 열린 마음으로 <br />
+            누구든 하나님의 사랑 안에서 평안 얻기를 소망합니다.<br />
+            작은 만남이 큰 위로가 되고, <br />
+            작은 발걸음이 새로운 믿음의 길이 되기를 바랍니다.<br />
+            언제나 여러분을 위해 기도하며 기다립니다.</p>
+        </div>
+        <div class="column large-half tab-full">
+          <div class="row">
+            <div class="column large-7 medium-full">
+              <h4 class="h6">오시는 길</h4>
+              <p>
+                아천동교회 <br />
+                경기도 구리시 아치울길 22번길 23-9 <br />
+                (아천동 364-1)
+              </p>
+
+              <p>
+                <a
+                  href="https://naver.me/FN7VN2Qv"
+                  target="_blank"
+                  class="btn btn--footer"
+                  >지도 확인하기</a
+                >
+              </p>
+            </div>
+            <div class="column large-5 medium-full">
+              <h4 class="h6">Quick Links</h4>
+              <ul class="footer-list">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">교회 소개</a></li>
+                <li><a href="departments.html">부서 소개</a></li>
+                <li><a href="worship.html">예배 안내</a></li>
+                <li><a href="events.html">교회 일정</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end footer-top -->
+
+      <div class="row footer-bottom">
+        <div class="column ss-copyright">
+          <span>© 2025 acheondongchurch. All rights reserved.</span>
+          <span
+            >Design adapted from
+            <a href="https://www.styleshout.com/">StyleShout</a></span
+          >
+        </div>
+      </div>
+      <!-- footer-bottom -->
+
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 0l8 9h-6v15h-4v-15h-6z" />
+          </svg>
+        </a>
+      </div>
+      <!-- ss-go-top -->
+    </footer>
+    <!-- end s-footer -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
