@@ -115,6 +115,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2132,6 +2133,10 @@ input::-moz-focus-inner {
   left: 0.8rem;
 }
 
+.hero-content h1 span {
+  display: block;
+}
+
 /* -------------------------------------------------------------------
  * ## hero content buttons
  * ------------------------------------------------------------------- */
@@ -2485,12 +2490,6 @@ html.no-csstransitions .hero-content {
   .hero-social {
     display: none;
   }
-}
-
-@media screen and (max-width: 500px) {
-  .hero-content {
-    width: 86%;
-  }
 
   .hero-scroll {
     -webkit-transform: none;
@@ -2498,6 +2497,12 @@ html.no-csstransitions .hero-content {
     right: auto;
     left: 0;
     bottom: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-content {
+    width: 86%;
   }
 }
 
@@ -3277,9 +3282,11 @@ html.no-csstransitions .hero-content {
   padding: 80px;
   align-items: flex-start;
   flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 .leaders-header {
+  flex: 0 0 220px;
   max-width: 220px;
   padding: 0px 10px;
   border-radius: 12px;
@@ -3361,7 +3368,7 @@ html.no-csstransitions .hero-content {
 /* about 공통 left header - 모바일*/
 /*----------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .church-menu {
     display: block;
     background-color: #7ba1db;
@@ -3479,6 +3486,8 @@ html.no-csstransitions .hero-content {
 .greeting-text {
   flex: 1 1 0;
   min-width: 200px;
+  max-width: 100%;
+  flex-shrink: 1;
 }
 
 .greeting-text p {
@@ -3486,6 +3495,8 @@ html.no-csstransitions .hero-content {
   line-height: 1.8;
   color: #444;
   margin-bottom: 16px;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .greeting-text p strong {
@@ -3530,6 +3541,45 @@ html.no-csstransitions .hero-content {
     font-size: 13px;
   }
 }
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .section.leaders {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px; /* ✅ 중앙 정렬 */
+    margin: 0 auto;
+    padding: 40px 20px; /* ✅ 양옆 공간 확보 */
+    box-sizing: border-box; /* ✅ 패딩 포함 */
+  }
+
+  .leaders-header {
+    flex: 0 0 200px; /* ✅ 고정 너비 */
+    max-width: 200px;
+  }
+
+  .leaders-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap; /* ✅ 가로로 고정 */
+    gap: 30px;
+  }
+
+  .greeting-img {
+    flex: 1 1 260px; /* ✅ 이미지 고정 */
+    max-width: 280px;
+  }
+
+  .greeting-text {
+    flex: 1; /* ✅ 나머지 글은 알아서 꽉 채움 */
+    min-width: 0;
+  }
+
+  .greeting-text p {
+    font-size: 17px !important; /* 글자만 작아짐 */
+  }
+}
 /* ------------------------------------------------------------------- 
  * ## history page 
  * ------------------------------------------------------------------- */
@@ -3556,10 +3606,9 @@ html.no-csstransitions .hero-content {
  * ------------------------------------------------------------------- */
 
 .leader-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 두 개씩 가로 배치 */
   gap: 20px 30px;
-  align-items: flex-start;
 }
 
 .leader-card {
@@ -3615,8 +3664,8 @@ html.no-csstransitions .hero-content {
   }
 
   .leader-row {
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 모바일에서는 한 줄에 하나 */
+    gap: 50px;
   }
 
   .leaders-header ul li {
@@ -3646,17 +3695,6 @@ html.no-csstransitions .hero-content {
   gap: 40px; /* 주소와 버튼 사이 간격 */
   margin-bottom: 0;
   flex-wrap: wrap;
-}
-
-.location-info h3 {
-  font-weight: 800;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.location-info p {
-  font-size: 18px;
-  color: #444;
 }
 
 .map-buttons-inline {
@@ -3779,7 +3817,8 @@ html.no-csstransitions .hero-content {
 
 .department-item img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 4 / 3; /* ⭐ 적당한 가로세로 비율 */
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -3810,7 +3849,7 @@ html.no-csstransitions .hero-content {
 
 @media (max-width: 600px) {
   .department-grid {
-    grid-template-columns: 1fr; /* ✅ 모바일: 1개 */
+    grid-template-columns: repeat(2, 1fr); /* ✅ 모바일: 1개 */
   }
 }
 
@@ -3842,7 +3881,7 @@ html.no-csstransitions .hero-content {
   background-color: #f2f7f8;
   padding: 50px;
   border-radius: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .department-intro-box h2,
@@ -3856,22 +3895,22 @@ html.no-csstransitions .hero-content {
 }
 
 .department-description {
-  font-size: 24px;
+  font-size: 21px;
   line-height: 1.8;
   color: #444;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
 .department-features {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .feature-block {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 .feature-column {
   flex: 1;
@@ -3928,6 +3967,13 @@ html.no-csstransitions .hero-content {
 @media (max-width: 768px) {
   .feature-row {
     flex-direction: column;
+  }
+
+  .department-description,
+  .feature-title,
+  .feature-text,
+  .feature-list li {
+    font-size: 18px;
   }
 }
 
@@ -4009,6 +4055,12 @@ html.no-csstransitions .hero-content {
   border-top: 3px dashed #ccc;
 }
 
+@media (max-width: 768px) {
+  .staff-table th {
+    width: 150px;
+  }
+}
+
 /* ------------------------------------------------------------------- */
 /* * ## 사진 hover 효과
  * ----------------------------------------------- */
@@ -4058,11 +4110,16 @@ html.no-csstransitions .hero-content {
  * ------------------------------------------------------------------- */
 /* event content
  * ----------------------------------------------- */
+
 .event-content {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 6rem;
+}
+
+.events-list__item h3 {
+  color: #173460;
 }
 
 .event-thumb {
@@ -4176,6 +4233,14 @@ html.no-csstransitions .hero-content {
   padding: 14px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .worship-table th,
+  .worship-table td {
+    font-size: 14px;
+  }
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * page styles
@@ -4225,6 +4290,21 @@ html.no-csstransitions .hero-content {
 @media screen and (max-width: 400px) {
   .page-header h1 {
     font-size: 4.2rem;
+  }
+}
+
+/* ------------------------------------------------------------------- 
+ * 모바일 br 최적화
+ * ------------------------------------------------------------------- */
+
+.mobile-hide {
+  display: inline;
+}
+
+/* 모바일: br 숨기기 */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
   }
 }
 
