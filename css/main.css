@@ -1653,6 +1653,99 @@ html.no-csstransitions .hero-content {
 }
 
 /* ===================================================================
+ * # connect
+ *
+ * ------------------------------------------------------------------- */
+
+.s-connect {
+  padding-top: 10rem;
+  padding-bottom: 0;
+  background-color: #ffffff;
+}
+
+.connect-content {
+  padding-bottom: 9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.connect-content .column {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+.connect-content .column:first-child {
+  padding-right: 2.4vw;
+}
+
+.connect-content .column:last-child {
+  padding-left: 2.4vw;
+}
+
+.connect-content .btn {
+  margin-top: auto;
+  margin-right: 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * connect
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 1000px) {
+  .connect-content .column:first-child {
+    padding-right: 2.2vw;
+  }
+
+  .connect-content .column:last-child {
+    padding-left: 2.2vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .connect-content .column {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .connect-content .column:first-child {
+    padding-right: 16px;
+  }
+
+  .connect-content .column:last-child {
+    padding-left: 16px;
+  }
+
+  .connect-content .column:first-child {
+    margin-bottom: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .connect-content .column:first-child {
+    padding-right: 10px;
+  }
+
+  .connect-content .column:last-child {
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .connect-content .column:first-child {
+    padding-right: 0;
+  }
+
+  .connect-content .column:last-child {
+    padding-left: 0;
+  }
+}
+
+/* ===================================================================
  * # events 
  *
  * ------------------------------------------------------------------- */
