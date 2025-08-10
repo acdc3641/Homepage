@@ -4,18 +4,17 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8" />
-    
-    <title>아천동교회</title>
-    <meta name="description" content="대한예수장로교 아천동교회 공식 홈페이지" />
-    <meta name="keywords" content="아천동교회, 구리아천동교회, 교회, 교회사이트, 아천동 교회, 아치울마을, 아천동, 아치울, 구리아치울, 구리아치울마을">  
-    <meta name="author" content="" />
-    <meta name="robots" content="index,follow">      
-    
-    <!-- 네이버 서치 어드바이저 인증 -->
-    <meta name="naver-site-verification" content="82f9427ca005c8b14013387f2adcc0804f36039f" />
-    <link rel="icon" type="image/png" href="https://acdc.or.kr/favicon.png">
-    <link rel="apple-touch-icon" href="https://acdc.or.kr/favicon.png">
-    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>아천동교회title>
+    <meta name="description" content="경기도 구리시 아치울마을에 위치한 대한예수장로교 아천동교회 공식 홈페이지. 예배안내, 교역자 소개, 부서 사역, 행사일정 안내." />
+    <link rel="canonical" href="https://www.acdc.or.kr/" />
+
+    <!-- 파비콘(절대경로) -->
+    <link rel="icon" href="https://www.acdc.or.kr/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.acdc.or.kr/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.acdc.or.kr/favicon.png">
+    <link rel="manifest" href="https://www.acdc.or.kr/site.webmanifest">
     
     <!-- Open Graph for KakaoTalk -->
     <meta property="og:type" content="website">
@@ -24,16 +23,48 @@
     <meta property="og:image" content="https://www.acdc.or.kr/images/og-image.jpg">
     <meta property="og:url" content="https://www.acdc.or.kr">
     
-    <!-- 연관채널 -->
-    <script type="application/ld+json">  
+  <!-- Organization + 연관 채널 -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "아천동교회",
-  "url": "https://www.acdc.or.kr",
+  "url": "https://www.acdc.or.kr/",
+  "logo": "https://www.acdc.or.kr/images/logo.png",
+  "description": "경기도 구리시 아치울마을에 위치한 대한예수장로교 아천동교회.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR",
+    "addressRegion": "경기도",
+    "addressLocality": "구리시",
+    "streetAddress": "아치울길 22번길 23-9 (아천동 364-1)"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "acheondong3641@gmail.com",
+    "areaServed": "KR",
+    "availableLanguage": ["Korean"]
+  }],
   "sameAs": [
     "https://cafe.naver.com/acheondongchurch",
     "https://www.youtube.com/channel/UCDaouPzxLvwSefpO3Cc82Og"
+  ]
+}
+</script>
+
+<!-- 네비게이션(탭 후보) 안내: 실제 존재하는 페이지만 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    { "@type": "SiteNavigationElement", "name": "예배안내",   "url": "https://www.acdc.or.kr/worship.html" },
+    { "@type": "SiteNavigationElement", "name": "교역자 소개", "url": "https://www.acdc.or.kr/leaders.html" },
+    { "@type": "SiteNavigationElement", "name": "교회일정",   "url": "https://www.acdc.or.kr/events.html" },
+    { "@type": "SiteNavigationElement", "name": "교회소개",   "url": "https://www.acdc.or.kr/about.html" },
+    { "@type": "SiteNavigationElement", "name": "부서소개",   "url": "https://www.acdc.or.kr/departments.html" },
+    { "@type": "SiteNavigationElement", "name": "담임목사 인사말", "url": "https://www.acdc.or.kr/greeting.html" }
   ]
 }
 </script>
