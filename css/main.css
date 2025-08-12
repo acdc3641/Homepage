@@ -255,7 +255,7 @@ p img {
 
 p.lead {
   font-family: "Nanum Myeongjo", serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 2.8rem;
   line-height: 1.857;
   margin-bottom: 3.6rem;
@@ -965,11 +965,11 @@ input::-moz-focus-inner {
 }
 
 .header-menu-toggle span::before {
-  top: -0.9rem;
+  top: -8px;
 }
 
 .header-menu-toggle span::after {
-  bottom: -0.9rem;
+  bottom: -8px;
 }
 
 .header-menu-toggle.is-clicked span {
@@ -1063,6 +1063,7 @@ input::-moz-focus-inner {
 
   .header-menu-toggle {
     display: block;
+    top: 1.8rem;
   }
 }
 
@@ -1690,6 +1691,18 @@ html.no-csstransitions .hero-content {
   margin-right: 0;
 }
 
+.youtube-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* 모서리 둥글게 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-link:hover img {
+  transform: scale(1.05); /* 5% 확대 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * connect
@@ -1750,8 +1763,8 @@ html.no-csstransitions .hero-content {
  *
  * ------------------------------------------------------------------- */
 .s-events {
-  padding-top: 10.4rem;
-  padding-bottom: 10.4;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: #ffffff;
 }
 
@@ -1763,6 +1776,37 @@ html.no-csstransitions .hero-content {
   margin-bottom: 2.4rem;
 }
 
+.calendar-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding-left: 2.4vw;
+  padding-right: 2.4vw;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.calendar-images img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-link:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .calendar-images {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /* ===================================================================
  * # current series 
  *
@@ -2011,6 +2055,12 @@ html.no-csstransitions .hero-content {
   margin-right: auto;
 }
 
+.auto-break {
+  word-break: keep-all; /* 한글, 영어 모두 단어 단위 줄바꿈 */
+  white-space: normal; /* 기본 줄바꿈 허용 */
+  line-height: 1.8; /* 줄 간격 */
+}
+
 /* -------------------------------------------------------------------
  * ## footer logo 
  * ------------------------------------------------------------------- */
@@ -2232,18 +2282,6 @@ html.no-csstransitions .hero-content {
   position: relative;
 }
 
-/* ------------------------------------------------------------------- 
- * ## page content 
- * ------------------------------------------------------------------- */
-.page-content {
-  padding-top: 12rem;
-  padding-bottom: 16rem;
-  background-color: #ffffff;
-}
-
-.page-content .row {
-  max-width: 1080px;
-}
 /* ------------------------------------------------------------------- 
  * ## about page 
  * ------------------------------------------------------------------- */
@@ -2505,13 +2543,13 @@ html.no-csstransitions .hero-content {
   }
 
   .greeting-text p {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .greeting-text p {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -2653,6 +2691,10 @@ html.no-csstransitions .hero-content {
 @media (max-width: 480px) {
   .leader-title {
     font-size: 14px;
+  }
+
+  .leader-title strong {
+    font-size: 22px;
   }
 }
 
@@ -2955,17 +2997,15 @@ html.no-csstransitions .hero-content {
   margin-top: 30px;
 }
 
-.btn-sns {
-  background-color: #173460;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
+.department-sns img {
+  width: 60px; /* 크기 조절 */
+  height: 60px; /* 정사각형 */
+  object-fit: contain; /* 이미지 비율 유지 */
+  transition: transform 0.2s ease;
 }
 
-.btn-sns:hover {
-  background-color: #ffffff;
+.department-sns img:hover {
+  transform: scale(1.1); /* 마우스 오버 시 살짝 확대 */
 }
 
 .staff-table {
@@ -3084,55 +3124,56 @@ html.no-csstransitions .hero-content {
 /* event content
  * ----------------------------------------------- */
 
-.event-content {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6rem;
+.page-content .calendar-section {
+  max-width: 1000px;
+  margin: 45px auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.events-list__item h3 {
+/* 제목 스타일 */
+.calendar-title {
+  font-size: 2.4rem;
+  font-weight: bold;
   color: #173460;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
-.event-thumb {
-  padding: 2.4rem;
-  background-color: #efefef;
+/* 이미지 스타일 */
+.calendar-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.event-thumb img {
-  vertical-align: bottom;
+/* 구분선 스타일 */
+.calendar-divider {
+  border: none;
+  border-top: 2px dashed #ccc;
+  margin: 40px 0;
 }
 
-.event-title {
-  text-align: center;
-}
+/* 반응형 */
+@media (max-width: 600px) {
+  .event-content {
+    margin-top: 1rem; /* 모바일에서 절반으로 줄임 */
+  }
 
-.event-meta {
-  list-style: none;
-  margin-top: 4.8rem;
-  margin-left: 0;
-  border-top: 1px solid #e0e0e0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.7rem;
-  line-height: 3.2rem;
-}
+  .page-content .calendar-section {
+    margin: 30px auto;
+    padding: 15px;
+  }
 
-.event-meta li {
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
-  padding-left: 0;
-  border-bottom: 1px solid #e0e0e0;
-}
+  .calendar-section {
+    padding: 15px; /* 모바일에서 여백 조금 줄임 */
+    margin: 30px auto; /* 위아래 여백 줄임 */
+  }
 
-.event-meta strong {
-  font-family: "Open Sans", sans-serif;
-  margin-right: 1.2rem;
-  color: #3b0d11;
-}
-
-.event-meta strong::after {
-  content: " :";
+  .calendar-title {
+    font-size: 2rem;
+  }
 }
 
 /*----------------------------------------------------------------- 
@@ -3177,6 +3218,12 @@ html.no-csstransitions .hero-content {
   padding: 14px;
   text-align: center;
   font-size: 15px;
+  white-space: nowrap;
+}
+
+.worship-table th:first-child,
+.worship-table td:first-child {
+  font-weight: bold;
 }
 
 .worship-table tbody tr:nth-child(even) {
@@ -3211,6 +3258,23 @@ html.no-csstransitions .hero-content {
   .worship-table th,
   .worship-table td {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .worship-table td {
+    white-space: normal; /* 줄바꿈 허용 */
+  }
+
+  /* 괄호를 앞에 두고 줄바꿈 */
+  .worship-table td br {
+    display: inline;
+  }
+
+  /* (유치부) 같은 걸 강제 줄바꿈 처리 */
+  .worship-table td span.sub {
+    display: block; /* 줄바꿈 */
+    font-weight: normal; /* 필요 시 스타일 변경 */
   }
 }
 
