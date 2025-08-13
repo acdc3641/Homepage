@@ -3601,4 +3601,31 @@ html.no-csstransitions .hero-content {
   }
 }
 
+@media (max-width: 767px) {
+  .card {
+    will-change: auto !important;
+  } /* 기존 will-change 덮기 */
+  .track {
+    scroll-snap-type: x proximity !important;
+  } /* mandatory → proximity */
+}
+
+/* 2) 데스크톱(hover 가능 환경)에서만 will-change 유지 */
+@media (hover: hover) {
+  .card {
+    will-change: transform;
+  }
+}
+
+/* 3) 텍스트 레이어 안정화(사파리 플리커 방지) */
+.caption,
+.cap-title,
+.cap-meta {
+  position: relative;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 /*# sourceMappingURL=main.css.map */
