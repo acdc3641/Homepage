@@ -347,14 +347,118 @@
         </div>
       </div>
       <!-- end event-header -->
-      <div class="calendar-images">
-        <a href="events.html" class="calendar-link">
-          <img src="images/event/calendar1.png" alt="당월" />
-        </a>
-        <a href="events.html" class="calendar-link">
-          <img src="images/event/calendar2.png" alt="전월" />
-        </a>
-      </div>
+
+      <section class="carousel" aria-label="행사 알림">
+        <button class="arrow left" type="button" aria-label="이전">
+          &#10094;
+        </button>
+
+        <div class="track">
+          <!-- 포스터들 (필요하면 계속 추가) -->
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img1.png"
+                alt="포스터1"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">교육부 헌신 예배</div>
+                <div class="cap-meta">일정 : 8월 31일(주일) 오후 2:30</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img2.png"
+                alt="포스터2"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">남선교회 헌신 예배</div>
+                <div class="cap-meta">일정 : 7월 27일(주일) 오후 2:00</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img3.jpg"
+                alt="포스터3"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">사무엘다니엘 여름 수련회</div>
+                <div class="cap-meta">일정 : 7월 26일(토)-27일(주일)</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img4.png"
+                alt="포스터4"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">솔로몬 여름 수련회</div>
+                <div class="cap-meta">일정 : 7월 18일(금)-20일(주일)</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img5.png"
+                alt="포스터5"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">예사공 여름 수련회</div>
+                <div class="cap-meta">일정 : 6월 20일(금)-22일(주일)</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img6.png"
+                alt="포스터6"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">온세대 연합 예배</div>
+                <div class="cap-meta">일정 : 5월 25일(주일) 오전 11:30</div>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img7.png"
+                alt="포스터7"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">장로 임직 예식</div>
+                <div class="cap-meta">일정 : 5월 18일(주일) 오후 2:30</div>
+              </figcaption>
+            </a>
+          </figure>
+        </div>
+
+        <button class="arrow right" type="button" aria-label="다음">
+          &#10095;
+        </button>
+      </section>
     </section>
 
     <!-- series
@@ -688,5 +792,50 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const track = document.querySelector(".track");
+      const slides = Array.from(track.children);
+      const leftBtn = document.querySelector(".arrow.left");
+      const rightBtn = document.querySelector(".arrow.right");
+
+      let current = 0;
+
+      /* 가장 가까운 카드 인덱스 계산(여러 장이 보이는 데스크톱에서도 정확) */
+      function nearestIndex() {
+        const left = track.scrollLeft;
+        let best = 0,
+          bestDist = Infinity;
+        slides.forEach((el, i) => {
+          const dist = Math.abs(el.offsetLeft - left);
+          if (dist < bestDist) {
+            best = i;
+            bestDist = dist;
+          }
+        });
+        return best;
+      }
+
+      function goTo(i) {
+        current = Math.max(0, Math.min(i, slides.length - 1));
+        const slide = slides[current];
+
+        /* 모바일(center 스냅)일 때는 중앙 정렬, 아니면 시작 정렬 */
+        const useCenter =
+          getComputedStyle(slide).scrollSnapAlign.includes("center");
+        const targetLeft = useCenter
+          ? Math.max(
+              0,
+              slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
+            )
+          : slide.offsetLeft;
+
+        track.scrollTo({ left: targetLeft, behavior: "smooth" });
+      }
+
+      /* 화살표: 한 카드씩 이동 */
+      rightBtn.addEventListener("click", () => goTo(nearestIndex() + 1));
+      leftBtn.addEventListener("click", () => goTo(nearestIndex() - 1));
+    </script>
   </body>
 </html>
