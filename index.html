@@ -43,6 +43,10 @@
       property="og:image"
       content="https://www.acdc.or.kr/images/og-images.jpg"
     />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.acdc.or.kr/images/og-images.jpg"
+    />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -60,7 +64,7 @@
         ],
         "url": "https://www.acdc.or.kr/",
         "logo": "https://www.acdc.or.kr/images/logo.png",
-        "image": "https://www.acdc.or.kr/images/og-image.jpg",
+        "image": "https://www.acdc.or.kr/images/og-images.jpg",
         "description": "경기도 구리시 아치울마을에 위치한 대한예수교장로회 아천동교회.",
         "address": {
           "@type": "PostalAddress",
@@ -81,7 +85,7 @@
         "sameAs": [
           "https://cafe.naver.com/acheondongchurch",
           "https://www.youtube.com/channel/UCDaouPzxLvwSefpO3Cc82Og"
-          /* "https://naver.me/FN7VN2Qv" */
+          "https://naver.me/FN7VN2Qv"
         ]
       }
     </script>
@@ -135,10 +139,6 @@
       }
     </script>
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <!-- link
     ================================================== -->
     <link
@@ -150,7 +150,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
+    <script src="./js/modernizr.js"></script>
     <!-- font
     ================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -176,11 +176,6 @@
     ================================================== -->
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/main.css" />
-
-    <!-- script
-    ================================================== -->
-    <script src="./js/modernizr.js"></script>
-
     <!-- favicons
     ================================================== -->
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon.png" />
