@@ -10,7 +10,7 @@
       name="naver-site-verification"
       content="82f9427ca005c8b14013387f2adcc0804f36039f"
     />
-    <title>아천동교회 | 대한예수교장로회 | 공식 홈페이지</title>
+    <title>아천동교회 | 공식 홈페이지</title>
     <meta
       name="description"
       content="대한예수교장로회 아천동교회 공식 홈페이지. 예배 안내, 교회 소개, 부서 사역, 행사 일정, 오시는 길을 확인하세요. (경기도 구리시 아치울마을)"
@@ -192,7 +192,8 @@
   <body id="top">
     <!-- preloader
     ================================================== -->
-    <div id="preloader">
+    <!-- body 초반 -->
+    <div id="preloader" hidden>
       <div id="loader" class="dots-jump">
         <div></div>
         <div></div>
@@ -200,6 +201,41 @@
       </div>
     </div>
     <h1 class="sr-only">아천동교회</h1>
+
+    <script>
+      (function () {
+        const pre = document.getElementById("preloader");
+        let shown = false;
+
+        // 0.8초 지나면 그때 프리로더 "표시" 시작 (느릴 때만)
+        const showTimer = setTimeout(() => {
+          if (!shown) {
+            pre.hidden = false;
+            shown = true;
+          }
+        }, 800);
+
+        // DOM만 준비되면 바로 숨김(이미지 기다리지 않음)
+        document.addEventListener("DOMContentLoaded", hideFast);
+
+        // 안전망: 최장 3.5초 지나면 무조건 숨김
+        const killTimer = setTimeout(hideFast, 3500);
+
+        function hideFast() {
+          clearTimeout(showTimer);
+          clearTimeout(killTimer);
+          if (!pre.hidden) {
+            pre.style.transition = "opacity .25s ease";
+            pre.style.opacity = 0;
+            pre.addEventListener("transitionend", () => pre.remove(), {
+              once: true,
+            });
+          } else {
+            pre.remove();
+          }
+        }
+      })();
+    </script>
 
     <!-- header
     ================================================== -->
