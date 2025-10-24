@@ -1,3 +1,13 @@
+# 모든 크롤러 허용
+User-agent: *
+Allow: /
+
+# 개별 명시(선택) - 없어도 되지만 선호
+User-agent: Googlebot
+Allow: /
+
 User-agent: Yeti
-Allow:/
+Allow: /
+
+# 사이트맵
 Sitemap: https://www.acdc.or.kr/sitemap.xml

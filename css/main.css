@@ -442,53 +442,6 @@ form,
  * # preloader
  *
  * ------------------------------------------------------------------- */
-/* Preloader 전체 영역 */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #f7fbff; /* 배경색 */
-  z-index: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 로딩 애니메이션 (점 3개) */
-#loader {
-  display: flex;
-  gap: 10px;
-}
-
-#loader div {
-  width: 10px;
-  height: 10px;
-  background-color: #124bb4; /* 색상 원하는 대로 */
-  border-radius: 50%;
-  animation: bounce 0.6s infinite ease-in-out;
-}
-
-#loader div:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-#loader div:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-/* 점 튀는 애니메이션 */
-@keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-}
 
 /* ===================================================================
  * # buttons
