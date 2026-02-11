@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="ko">
   <head>
     <!--- basic page needs
@@ -419,6 +419,20 @@
 
         <div class="track">
           <!-- 포스터들 -->
+          <figure class="card">
+            <a class="card-link" href="events.html">
+              <img
+                src="images/event/img17.jpg"
+                alt="포스터17"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption">
+                <div class="cap-title">사무엘다니엘 겨울수련회</div>
+                <div class="cap-meta">일정 : 2월 14일(토)-15일(일)</div>
+              </figcaption>
+            </a>
+          </figure>
           <figure class="card">
             <a class="card-link" href="events.html">
               <img
@@ -1018,7 +1032,7 @@
         const targetLeft = useCenter
           ? Math.max(
               0,
-              slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
+              slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2,
             )
           : slide.offsetLeft;
 
